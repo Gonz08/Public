@@ -3,13 +3,13 @@
 echo "############# Anlage eines neuen Users und Aufnahme in alle Gruppen in denen Pi Mitglied ist ' ###############"
 echo "Wie soll der neue Benutzername lauten?"
 
-user="bene"
+user="tim"
 echo "hallo" 
 echo $user
 
 
 sudo useradd -m $user #User mit Homeverzeichnis anlegen
-passwd $user
+sudo passwd $user
 
 sudo adduser $user adm
 sudo adduser $user dialout
