@@ -18,7 +18,7 @@ sudo apt-get install lshw -y
 echo "############# Anlage eines neuen Users und Aufnahme in alle Gruppen in denen Pi Mitglied ist ' ###############"
 echo "Wie soll der neue Benutzername lauten?"
 read user
-sudo adduser $user
+sudo adduser -m $user #User mit Homeverzeichnis anlegen
 
 sudo adduser $user adm
 sudo adduser $user dialout
