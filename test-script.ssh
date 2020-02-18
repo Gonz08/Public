@@ -3,7 +3,7 @@
 echo "############# Anlage eines neuen Users und Aufnahme in alle Gruppen in denen Pi Mitglied ist ' ###############"
 echo "Wie soll der neue Benutzername lauten?"
 
-user = "bene"
+user="bene"
 echo "hallo" 
 echo $user
 
