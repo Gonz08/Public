@@ -4,6 +4,7 @@ echo "############# Anlage eines neuen Users und Aufnahme in alle Gruppen in den
 echo "Wie soll der neue Benutzername lauten?"
 
 user = "bene"
+
 sudo useradd -m $user #User mit Homeverzeichnis anlegen
 passwd $user
 
