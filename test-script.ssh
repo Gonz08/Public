@@ -4,6 +4,8 @@ echo "############# Anlage eines neuen Users und Aufnahme in alle Gruppen in den
 echo "Wie soll der neue Benutzername lauten?"
 
 user="tim"
+echo $user
+read user
 echo "hallo" 
 echo $user
 
