@@ -8,6 +8,7 @@ echo
 
 
 echo "############# Docker installieren ###############"
+curl wttr.in/Traunstein
 sudo curl -fsSL https://get.docker.com | sh
 
 sudo usermod -aG docker tj
