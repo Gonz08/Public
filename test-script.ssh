@@ -5,6 +5,11 @@ echo "Wie soll der neue Benutzername lauten?"
 
 user = "bene"
 
+
+echo "hallo" 
+echo $user
+
+
 sudo useradd -m $user #User mit Homeverzeichnis anlegen
 passwd $user
 
