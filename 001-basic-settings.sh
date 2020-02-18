@@ -36,4 +36,4 @@ sudo adduser $user i2c
 sudo adduser $user gpio
 
 echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
-sudo reboot 
+# sudo reboot 
