@@ -15,12 +15,15 @@ sudo apt-get install nautilus -y
 sudo apt-get install lshw -y
 
 
-echo "############# Anlage eines neuen Users und Aufnahme in alle Gruppen in denen Pi Mitglied ist ' ###############"
+echo "############# Anlage eines neuen Users und Passwort vergeben ' ###############"
 echo "Wie soll der neue Benutzername lauten?"
 user="tj"
+echo $user
  
 sudo useradd -m $user #User mit Homeverzeichnis anlegen
+sudo gpasswd -a $user sudo
 
+echo "############# Aufnahme in alle Gruppen in denen Pi Mitglied ist ' ###############"
 sudo adduser $user adm
 sudo adduser $user dialout
 sudo adduser $user cdrom
@@ -37,4 +40,4 @@ sudo adduser $user i2c
 sudo adduser $user gpio
 
 echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
-# sudo reboot 
+sudo reboot 
