@@ -19,6 +19,10 @@ sudo docker run hello-world
 
 
 
-echo "############# nach einem Reboot ist der user tj in Gruppe docker aktiv ###############"
+echo "############# jetzt kann wieder in die GUI gebootet werden ###############"
+
 wait 5
+sudo raspi-config
+
+echo "############# nach einem Reboot ist der user tj in Gruppe docker aktiv ###############"
 sudo reboot
