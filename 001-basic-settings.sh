@@ -22,6 +22,7 @@ echo $user
  
 sudo useradd -m $user #User mit Homeverzeichnis anlegen
 sudo gpasswd -a $user sudo
+sudo gpasswd $user 
 
 echo "############# Aufnahme in alle Gruppen in denen Pi Mitglied ist ' ###############"
 sudo adduser $user adm
