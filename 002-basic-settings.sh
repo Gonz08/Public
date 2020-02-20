@@ -17,6 +17,12 @@ sudo usermod -aG docker tj
 echo "############# Docker Check ###############"
 sudo docker run hello-world
 
+echo "############# Docker Compose ###############"
+sudo apt-get install libffi-dev libssl-dev
+sudo apt-get install -y python python-pip
+sudo apt-get remove python-configparser
+sudo pip install docker-compose 
+
 
 
 echo "############# jetzt kann wieder in die GUI gebootet werden ###############"
