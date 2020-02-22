@@ -35,6 +35,6 @@ sudo apt-get install gparted -y
 sudo apt-get install backintime-qt4 
 sudo apt-get install freeplane -y
 sudo apt-get install freecad freecad-doc -y
-sudo apt-get install chromium -y
-
+sudo apt-get install chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg  -y
+sudo apt-get install chromium-codecs-ffmpeg-extra -y
 echo "############################"
