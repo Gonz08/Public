@@ -29,7 +29,7 @@ sudo adduser  kinder
 #Programme installieren
 echo "############################"
 sudo snap install spotify 
-sudo apt-get install picoscope
+sudo apt-get install picoscope -y
 sudo apt-get install libreoffice libreoffice-l10n-de libreoffice-help-de -y
 sudo apt-get install gparted -y
 sudo apt-get install backintime-qt4 
