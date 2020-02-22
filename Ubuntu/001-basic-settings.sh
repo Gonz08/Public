@@ -34,7 +34,7 @@ sudo apt-get install libreoffice libreoffice-l10n-de libreoffice-help-de -y
 sudo apt-get install gparted -y
 sudo apt-get install backintime-qt4 
 sudo apt-get install freeplane -y
-sudo apt-get install freecad freecad-doc
-sudo apt-get install chromium
+sudo apt-get install freecad freecad-doc -y
+sudo apt-get install chromium -y
 
 echo "############################"
