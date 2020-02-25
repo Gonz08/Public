@@ -18,7 +18,6 @@ echo -n "ENTER Taste um fortzufahren ..."
 read input
 sudo adduser  birgit && adduser birgit sudo
 sudo adduser birgit tj
-sudo chmod u=rw,g=rw,o=r /home/all
 read user
 sudo adduser  kinder 
 
