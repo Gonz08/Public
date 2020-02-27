@@ -5,7 +5,6 @@ echo "############# Ornder für die Installation vorbereiten ###############"
 mkdir Programme
 cd Programme/
 mkdir supervisor
-mkdir syncthing
 
 
 echo "############# syncthing installieren ###############"
