@@ -16,7 +16,8 @@ sudo apt-get update && sudo apt-get install syncthing
 
 echo "############# OMV installieren ###############"
 wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
-
+echo "############# supervisor installieren ###############"
+sudo apt-get install supervisor
 
 
 echo "Für die Autostartfunktion von Syncthing wird Supervisor installiert"
