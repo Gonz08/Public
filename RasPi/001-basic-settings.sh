@@ -13,6 +13,8 @@ sudo apt-get install gparted -y
 sudo apt-get install gnome-disk-utility -y
 sudo apt-get install nautilus -y
 sudo apt-get install lshw -y
+sudo apt-get install curl -y
+sudo apt-get install wget -y
 
 
 echo "############# Anlage eines neuen Users und Passwort vergeben ' ###############"
