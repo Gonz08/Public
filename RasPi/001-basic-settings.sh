@@ -9,6 +9,8 @@ sudo apt-get upgrade -y
 
 
 echo "############# Zusätzliche Software' ###############"
+sudo apt-get install synaptic -y
+#sudo apt-get install libreoffice -y
 sudo apt-get install gparted -y
 sudo apt-get install gnome-disk-utility -y
 sudo apt-get install nautilus -y
