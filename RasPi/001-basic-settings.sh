@@ -6,7 +6,7 @@ sudo raspi-config
 echo "############# System Updates/Upgrades ausführen & Installation der 'unattended_upgrades' ###############"
 sudo apt update -y  
 sudo apt-get upgrade -y
-
+sudo apt-get dist-upgrade -y
 
 echo "############# Zusätzliche Software' ###############"
 sudo apt-get install synaptic -y
@@ -17,10 +17,9 @@ sudo apt-get install nautilus -y
 sudo apt-get install lshw -y
 sudo apt-get install curl -y
 sudo apt-get install wget -y
-
+sudo apt autoremove -y
 
 echo "############# Anlage eines neuen Users und Passwort vergeben ' ###############"
-echo "Wie soll der neue Benutzername lauten?"
 user="tj"
 echo $user
  
