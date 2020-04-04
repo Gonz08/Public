@@ -9,14 +9,37 @@ sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
 echo "############# Zusätzliche Software' ###############"
+
+echo "############# Zusätzliche Software' ###############"
+
+sudo apt-get install gparted -y
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+
+
+
 sudo apt-get install synaptic -y
 #sudo apt-get install libreoffice -y
-sudo apt-get install gparted -y
 sudo apt-get install gnome-disk-utility -y
 sudo apt-get install nautilus -y
 sudo apt-get install lshw -y
 sudo apt-get install curl -y
 sudo apt-get install wget -y
+sudo apt install xscreensaver -y
+
 sudo apt autoremove -y
 
 echo "############# Anlage eines neuen Users und Passwort vergeben ' ###############"
