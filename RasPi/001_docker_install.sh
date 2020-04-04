@@ -3,6 +3,44 @@
 
 
 echo
+echo "############# Konfiguration der Raspi:Tastatur, Bootoption... ###############"
+sudo raspi-config
+echo "############# System Updates/Upgrades ausführen & Installation der 'unattended_upgrades' ###############"
+sudo apt update -y  
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+
+echo "############# Zusätzliche Software' ###############"
+
+sudo apt-get install gparted -y
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+echo "############# achtung ###############"
+echo "############# partition fsroot erweitern mit gparted###############"
+wait1 1
+
+
+sudo raspi-config
+sudo apt-get install synaptic -y
+#sudo apt-get install libreoffice -y
+sudo apt-get install gnome-disk-utility -y
+sudo apt-get install nautilus -y
+sudo apt-get install lshw -y
+sudo apt-get install curl -y
+sudo apt-get install wget -y
+sudo apt install xscreensaver -y
+sudo apt autoremove -y
+
 
 
 echo "############# Docker installieren ###############"
@@ -24,7 +62,6 @@ sudo pip install docker-compose
 echo "############# jetzt kann wieder in die GUI gebootet werden ###############"
 
 
-sudo raspi-config
 
 echo "############# nach einem Reboot ist der user tj in Gruppe docker aktiv ###############"
 sudo reboot
