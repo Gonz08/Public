@@ -3,8 +3,7 @@
 
 
 echo
-echo "############# Konfiguration der Raspi:Tastatur, Bootoption... ###############"
-sudo raspi-config
+
 echo "############# System Updates/Upgrades ausführen & Installation der 'unattended_upgrades' ###############"
 sudo apt update -y  
 sudo apt-get upgrade -y
