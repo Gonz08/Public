@@ -27,7 +27,7 @@ wait1 1
 echo "############# achtung ###############"
 echo "############# partition fsroot erweitern mit gparted###############"
 wait1 1
-
+sudo gparted
 
 sudo raspi-config
 sudo apt-get install synaptic -y
@@ -55,7 +55,9 @@ sudo apt-get install libffi-dev libssl-dev
 sudo apt-get install -y python python-pip
 sudo apt-get remove python-configparser
 sudo pip install docker-compose 
-
+mkdir /home/docker
+mkdir /home/docker/portainer
+docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /home/docker/portainer/data:/data portainer/portainer
 
 
 echo "############# jetzt kann wieder in die GUI gebootet werden ###############"
