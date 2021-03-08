@@ -21,6 +21,7 @@ echo -n "ENTER Taste um fortzufahren ..."
 sudo useradd -m tj
 sudo passwd tj
 sudo adduser tj sudo
+sudo adduser tj ssh
 echo "########### Updates werden installiert #################"
 
 #upgrade
