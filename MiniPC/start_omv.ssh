@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#Pakete ergänzen
+
+echo "############################"
+echo "############################"
+echo "##############   Weitere Respositoris werden eingebunden ##############"
+
+sudo apt-get update -y
+sudo apt-get install curl -y
+sudo apt-get install wget -y
+wget -c https://syncthing.net/release-key.txt | sudo apt-key add -
+echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+
+
+sudo apt-get update -y
+echo "############################"
+echo "############## User werden erstellt##############"
+echo -n "ENTER Taste um fortzufahren ..." 
+sudo useradd -m tj
+sudo passwd tj
+sudo adduser tj sudo
+sudo adduser tj ssh
+echo "########### Updates werden installiert #################"
+
+#upgrade
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
+sudo apt-get autoremove -y
+echo "############### Fish als Bash nstallieren##############"
+sudo apt-get install fish -y
+chsh -s /usr/bin/fish 
+echo "############### syncthing installieren##############"
+sudo apt-get install apt-transport-https -y
+sudo apt-get install syncthing -y
+
+
+
+
