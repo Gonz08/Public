@@ -7,26 +7,13 @@ sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
 echo "############# Zusätzliche Software' ###############"
+sudo apt-get install fish -y
+chsh -s /usr/bin/fish 
 
 echo "############# Zusätzliche Software' ###############"
 
 sudo apt-get install gparted -y
-echo "############# achtung ###############"
-echo "############# partition fsroot erweitern mit gparted###############"
-wait1 1
-echo "############# achtung ###############"
-echo "############# partition fsroot erweitern mit gparted###############"
-wait1 1
-echo "############# achtung ###############"
-echo "############# partition fsroot erweitern mit gparted###############"
-wait1 1
-echo "############# achtung ###############"
-echo "############# partition fsroot erweitern mit gparted###############"
-wait1 1
-echo "############# achtung ###############"
-echo "############# partition fsroot erweitern mit gparted###############"
-wait1 1
-
+ec
 
 
 sudo apt-get install synaptic -y
