@@ -13,7 +13,7 @@ echo "############# Zusätzliche Software' ###############"
 
 
 sudo apt-get install synaptic -y
-sudo apt-get install libreoffice -y
+#sudo apt-get install libreoffice -y
 sudo apt-get install gparted -y
 sudo apt-get install gnome-disk-utility -y
 sudo apt-get install nautilus -y
@@ -31,8 +31,18 @@ sudo apt-get install syncthing -y
 
 echo "############# OMV installieren ###############"
 wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
-echo "############# supervisor installieren ###############"
-sudo apt-get install supervisor -y
+#echo "############# supervisor installieren ###############"
+#sudo apt-get install supervisor -y
+
+sudo useradd -m tj
+sudo passwd tj
+sudo adduser tj sudo
+sudo adduser tj ssh
+sudo smbpasswd -a tj
+
+sudo systemctl enable syncthing@tj.service
+sudo systemctl start syncthing@tj.service
+
  
 
 echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
