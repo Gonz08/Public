@@ -31,19 +31,11 @@ sudo apt-get install syncthing -y
 
 echo "############# OMV installieren ###############"
 wget -O - https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install | sudo bash
-#echo "############# supervisor installieren ###############"
+echo "############# supervisor installieren ###############"
 #sudo apt-get install supervisor -y
-
-sudo useradd -m tj
-sudo passwd tj
-sudo adduser tj sudo
-sudo adduser tj ssh
-sudo smbpasswd -a tj
-
-sudo systemctl enable syncthing@tj.service
-sudo systemctl start syncthing@tj.service
-
  
-
+sudo apt-get install fish 
+#" Fish als aktive shell definiern: 
+chsh -s /usr/bin/fish 
 echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
 sudo reboot 
