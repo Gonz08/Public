@@ -44,6 +44,7 @@ sudo apt-get install fish
 #" Fish als aktive shell definiern: 
 chsh -s /usr/bin/fish 
 sudo apt-get install picoscope -y
+sudo apt-get install nautilus-image-converter -y
 sudo apt-get install libreoffice libreoffice-l10n-de libreoffice-help-de -y
 sudo apt-get install gparted -y
 sudo apt-get install backintime-qt4 
