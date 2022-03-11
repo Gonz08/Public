@@ -1,3 +1,12 @@
+Installierte Addons für NodeRed
+InfluxDB
+OpenWeatherMap
+
+
+
+Ab hier Daten-Export NodeRed
+
+
 [
     {
         "id": "1cbe49a43222c844",
