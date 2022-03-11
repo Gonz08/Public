@@ -1,0 +1,71 @@
+#!/bin/sh
+# 
+echo
+echo "############# System Updates/Upgrades ausführen & Installation der 'unattended_upgrades' ###############"
+sudo apt update -y  
+sudo apt upgrade -y
+sudo apt autoremove -y
+
+
+echo "############# Zusätzliche Software' ###############"
+sudo apt install fish -y
+chsh -s /usr/bin/fish 
+
+echo "############# Zusätzliche Software' ###############"
+
+#sudo apt install gparted -y
+#sudo apt install synaptic -y
+#sudo apt install libreoffice -y
+#sudo apt install gnome-disk-utility -y
+#sudo apt install nautilus -y
+#sudo apt install lshw -y
+#sudo apt install curl -y
+#sudo apt install wget -y
+#sudo apt install xscreensaver -y
+
+echo "############# node red installieren ###############"
+
+#bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+#sudo apt install build-essential git curl -y
+#sudo systemctl enable nodered.service
+#sudo systemctl restart nodered.service
+
+# http://192.168.178.37:1880
+
+
+echo "############# InfluxDB installieren ###############"
+
+
+wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+source /etc/os-release
+echo "deb https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+sudo apt update && sudo apt install -y influxdb
+
+sudo systemctl unmask influxdb.service
+sudo systemctl start influxdb
+sudo systemctl enable influxdb.service
+
+
+
+
+echo "############# InfluxDB installieren ###############"
+
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+
+sudo apt update && sudo apt install -y grafana
+
+
+sudo systemctl unmask grafana-server.service
+sudo systemctl start grafana-server
+sudo systemctl enable grafana-server.service
+
+# http://192.168.178.37:3000
+
+
+
+
+
+echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
+sudo reboot 
