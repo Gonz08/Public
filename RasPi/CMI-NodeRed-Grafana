@@ -83,9 +83,12 @@ echo " jetzt auf  http://192.168.178.37:8384 aktiv"
 
 echo "############# MQTT installieren ###############"
 
-
-
-
+sudo apt install mosquitto
+sudo apt install mosquitto-clients
+sudo systemctl enable mosquitto 
+sudo systemctl start mosquitto 
+echo "#############  Konfiguration User-Accounts ###############"
+echo "#############  siehe hier:  https://plantprogrammer.de/mqtt-auf-dem-raspberry-pi-mosquitto/ ###############"
 
 
 
