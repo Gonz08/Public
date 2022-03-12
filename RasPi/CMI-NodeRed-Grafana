@@ -30,8 +30,7 @@ echo "############# node red installieren ###############"
 #sudo systemctl enable nodered.service
 #sudo systemctl restart nodered.service
 
-# http://192.168.178.37:1880
-
+echo " jetzt auf  http://192.168.178.37:1880 aktiv"
 
 echo "############# InfluxDB installieren ###############"
 
@@ -49,7 +48,7 @@ sudo systemctl enable influxdb.service
 
 
 
-echo "############# InfluxDB installieren ###############"
+echo "############# Grafana installieren ###############"
 
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
@@ -61,7 +60,31 @@ sudo systemctl unmask grafana-server.service
 sudo systemctl start grafana-server
 sudo systemctl enable grafana-server.service
 
-# http://192.168.178.37:3000
+echo " jetzt auf  http://192.168.178.37:3000 aktiv"
+
+echo "############# Syncthing installieren ###############"
+
+sudo apt-get install curl
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sour>
+sudo apt update && sudo apt install syncthing -y
+syncthing
+
+echo "#############               ACHTUNG              ###############"
+echo "############# IP Adresse ändern in: 0.0.0.0:8384 ###############"
+echo "#############               ACHTUNG              ###############"
+nano /home/pi/.config/syncthing/config.xml
+
+sudo systemctl enable syncthing@pi.service
+sudo systemctl restart syncthing@pi.service
+
+echo " jetzt auf  http://192.168.178.37:8384 aktiv"
+
+
+echo "############# MQTT installieren ###############"
+
+
+
 
 
 
