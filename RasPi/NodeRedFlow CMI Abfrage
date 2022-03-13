@@ -2,10 +2,170 @@
     {
         "id": "1cbe49a43222c844",
         "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1c16c59919477972",
+        "type": "tab",
+        "label": "CMI / OpenweatherMap",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "417655d9e0c2355b",
+        "type": "tab",
         "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
+    },
+    {
+        "id": "cf857280c50b1002",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "sensors",
+        "name": "DB auf  RasPi3",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "2badcf663eb3b467",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "60e68d9e8a9709e4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD.MM.YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "41b4c1a068f36d62",
+        "type": "mqtt-broker",
+        "name": "MQTT auf RasPi3",
+        "broker": "192.168.178.37",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
     },
     {
         "id": "d0b77f78261219bb",
@@ -550,30 +710,1230 @@
         ]
     },
     {
-        "id": "41b4c1a068f36d62",
-        "type": "mqtt-broker",
-        "name": "MQTT auf RasPi3",
-        "broker": "192.168.178.37",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
+        "id": "81b4279296e9c492",
+        "type": "inject",
+        "z": "1c16c59919477972",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 390,
+        "y": 600,
+        "wires": [
+            [
+                "be6961653331133c",
+                "21ad7ed3544a169f"
+            ]
+        ]
+    },
+    {
+        "id": "be6961653331133c",
+        "type": "http request",
+        "z": "1c16c59919477972",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.178.41/include/api.cgi?jsonnode=1&jsonparam=I,O,Na,Nd ",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "senderr": false,
+        "x": 550,
+        "y": 600,
+        "wires": [
+            [
+                "a61fd4e441b5238c"
+            ]
+        ]
+    },
+    {
+        "id": "de181b87a22eaffe",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a3dabd26e36be8bc",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "a61fd4e441b5238c",
+        "type": "json",
+        "z": "1c16c59919477972",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 690,
+        "y": 600,
+        "wires": [
+            [
+                "de181b87a22eaffe",
+                "462bd31c8edb3001",
+                "54c18b633576e450",
+                "328bc65ce86a0241",
+                "ec7005198ea180e4",
+                "0b38e0d3e3f256ac",
+                "7cb18fcdd27be61d",
+                "3fb28f965beb552e",
+                "d17ebec0402a3d76",
+                "70dfb88670a61780",
+                "b2027b706b414aae",
+                "4632dc6b34b85dce",
+                "0a6cf14aa882b743",
+                "8dcbb532fe08995e",
+                "d86a5161408028d7",
+                "ed4ecc69347aefa7",
+                "89d968d837412d1f",
+                "3c95560bd6b76bc1",
+                "7fac6fcd1d34eab0",
+                "88eb05b511b4436e"
+            ]
+        ]
+    },
+    {
+        "id": "b7639c39b72982f8",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.SPoben",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1260,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "641ff5c147ebc294",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.tempc};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1900,
+        "wires": [
+            [
+                "a3dabd26e36be8bc",
+                "c244a44bdd61b735"
+            ]
+        ]
+    },
+    {
+        "id": "462bd31c8edb3001",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[1].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "b7639c39b72982f8"
+            ]
+        ]
+    },
+    {
+        "id": "54c18b633576e450",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[0].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 200,
+        "wires": [
+            [
+                "ec32d690acf4d991"
+            ]
+        ]
+    },
+    {
+        "id": "ec32d690acf4d991",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.Kollektor",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1270,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "328bc65ce86a0241",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[2].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 340,
+        "wires": [
+            [
+                "e17188c592dd6bb7"
+            ]
+        ]
+    },
+    {
+        "id": "e17188c592dd6bb7",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.SPunten",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1270,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ec7005198ea180e4",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[3].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 400,
+        "wires": [
+            [
+                "0d06ddab7441f856"
+            ]
+        ]
+    },
+    {
+        "id": "0d06ddab7441f856",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.KollektorRL",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1280,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0b38e0d3e3f256ac",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[4].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 460,
+        "wires": [
+            [
+                "d56d9d8438b12398"
+            ]
+        ]
+    },
+    {
+        "id": "d56d9d8438b12398",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.Puffer.u",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1260,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "7cb18fcdd27be61d",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[5].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 520,
+        "wires": [
+            [
+                "dcbf84e5f8c0df7c"
+            ]
+        ]
+    },
+    {
+        "id": "c244a44bdd61b735",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "AktTempTS",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1300,
+        "y": 1940,
+        "wires": []
+    },
+    {
+        "id": "21ad7ed3544a169f",
+        "type": "openweathermap",
+        "z": "1c16c59919477972",
+        "name": "OpenWeatherMap von TS",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Traunstein",
+        "country": "Germany",
+        "language": "de",
+        "x": 710,
+        "y": 1900,
+        "wires": [
+            [
+                "641ff5c147ebc294",
+                "4c245f728f2ae3f8",
+                "e88e649204f869b8",
+                "db29b9c16e296f8c"
+            ]
+        ]
+    },
+    {
+        "id": "dcbf84e5f8c0df7c",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.Puffer.m",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1270,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "3fb28f965beb552e",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[6].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 580,
+        "wires": [
+            [
+                "86bf0ecb62101764"
+            ]
+        ]
+    },
+    {
+        "id": "86bf0ecb62101764",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.Puffer.o",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1260,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "d17ebec0402a3d76",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[7].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 660,
+        "wires": [
+            [
+                "8bb9dfedd1f8b491"
+            ]
+        ]
+    },
+    {
+        "id": "8bb9dfedd1f8b491",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.LueftungRaumAB",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1290,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cbfa3cb59406fd6f",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.LueftungZU",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1280,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "70dfb88670a61780",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[8].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 720,
+        "wires": [
+            [
+                "cbfa3cb59406fd6f"
+            ]
+        ]
+    },
+    {
+        "id": "0ab0cab236c7330e",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.HeizkreisVL2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1280,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b2027b706b414aae",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[10].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 780,
+        "wires": [
+            [
+                "0ab0cab236c7330e"
+            ]
+        ]
+    },
+    {
+        "id": "15ca46dc8ffb2a8d",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.Aussen",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1260,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "4632dc6b34b85dce",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[11].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 840,
+        "wires": [
+            [
+                "15ca46dc8ffb2a8d"
+            ]
+        ]
+    },
+    {
+        "id": "38055469b8a4bbf9",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.Lueftung.RaumZU",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1300,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "0a6cf14aa882b743",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[14].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 900,
+        "wires": [
+            [
+                "38055469b8a4bbf9"
+            ]
+        ]
+    },
+    {
+        "id": "bc0c94027e391ce9",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.LueftungAB",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1280,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "8dcbb532fe08995e",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[15].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1020,
+        "wires": [
+            [
+                "bc0c94027e391ce9"
+            ]
+        ]
+    },
+    {
+        "id": "a82f96bf3fd13e8f",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 2600,
+        "wires": []
+    },
+    {
+        "id": "d8aabd861139b63e",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.tempc};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 2660,
+        "wires": [
+            [
+                "f74efa5c4e3d236d"
+            ]
+        ]
+    },
+    {
+        "id": "f74efa5c4e3d236d",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "AktTempTS",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1220,
+        "y": 2680,
+        "wires": []
+    },
+    {
+        "id": "a18dea2d608038ac",
+        "type": "openweathermap",
+        "z": "1c16c59919477972",
+        "name": "OpenWeatherMap von TS 5Tag Voraus",
+        "wtype": "forecast",
+        "lon": "",
+        "lat": "",
+        "city": "Traunstein",
+        "country": "Germany",
+        "language": "de",
+        "x": 780,
+        "y": 2600,
+        "wires": [
+            [
+                "a82f96bf3fd13e8f"
+            ]
+        ]
+    },
+    {
+        "id": "ca71d76e505ba7ea",
+        "type": "inject",
+        "z": "1c16c59919477972",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 480,
+        "y": 2580,
+        "wires": [
+            [
+                "a18dea2d608038ac"
+            ]
+        ]
+    },
+    {
+        "id": "4c245f728f2ae3f8",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "a1a122f74e0de01e",
+        "type": "openweathermap",
+        "z": "1c16c59919477972",
+        "name": "OpenWeatherMap von TS",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Traunstein",
+        "country": "Germany",
+        "language": "de",
+        "x": 690,
+        "y": 2300,
+        "wires": [
+            [
+                "b02b6dd615d9666a"
+            ]
+        ]
+    },
+    {
+        "id": "e88e649204f869b8",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.humidity};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1980,
+        "wires": [
+            [
+                "4ba63fe84cd5f3e7",
+                "971ac74d920b6052"
+            ]
+        ]
+    },
+    {
+        "id": "b02b6dd615d9666a",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "4ba63fe84cd5f3e7",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "971ac74d920b6052",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "AktLuftfeuchteTS",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1310,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "b00476caac0314ef",
+        "type": "inject",
+        "z": "1c16c59919477972",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 2180,
+        "wires": [
+            [
+                "a1a122f74e0de01e"
+            ]
+        ]
+    },
+    {
+        "id": "db29b9c16e296f8c",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.pressure};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 2060,
+        "wires": [
+            [
+                "cb618d83b2f20551",
+                "e68a900a2fd9c736"
+            ]
+        ]
+    },
+    {
+        "id": "cb618d83b2f20551",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 2060,
+        "wires": []
+    },
+    {
+        "id": "e68a900a2fd9c736",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "AktLuftdruckTS",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1310,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "d86a5161408028d7",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Inputs[15].Value.Value};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 960,
+        "wires": [
+            [
+                "516979dce930c79b"
+            ]
+        ]
+    },
+    {
+        "id": "516979dce930c79b",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.T.LueftungAB",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1280,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "2160475975d1cae6",
+        "type": "http request",
+        "z": "1c16c59919477972",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.178.41/include/api.cgi?jsonnode=1&jsonparam=I,O,Na,Nd,Sp1 ",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "senderr": false,
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "58273648da02dc4b"
+            ]
+        ]
+    },
+    {
+        "id": "58273648da02dc4b",
+        "type": "json",
+        "z": "1c16c59919477972",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 670,
+        "y": 120,
+        "wires": [
+            [
+                "1afe83fb1801da8b"
+            ]
+        ]
+    },
+    {
+        "id": "1afe83fb1801da8b",
+        "type": "debug",
+        "z": "1c16c59919477972",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2f714e6b52f5e865",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.Out.Pumpe-Solar",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1270,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "ed4ecc69347aefa7",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Outputs[0].Value.Value};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1180,
+        "wires": [
+            [
+                "2f714e6b52f5e865"
+            ]
+        ]
+    },
+    {
+        "id": "1b9792c67ee889fc",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.Out.Vent.Solar",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1260,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "89d968d837412d1f",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Outputs[1].Value.Value};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1240,
+        "wires": [
+            [
+                "1b9792c67ee889fc"
+            ]
+        ]
+    },
+    {
+        "id": "7b8ce414b48103cf",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.Out.Pumpe-Hzkr2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1270,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "3c95560bd6b76bc1",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Outputs[3].Value.Value};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1300,
+        "wires": [
+            [
+                "7b8ce414b48103cf"
+            ]
+        ]
+    },
+    {
+        "id": "8bfe70deb8c49f8f",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.Out.Anf.Kessel",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1260,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "7fac6fcd1d34eab0",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Outputs[4].Value.Value};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1360,
+        "wires": [
+            [
+                "8bfe70deb8c49f8f"
+            ]
+        ]
+    },
+    {
+        "id": "3ddbc8aa1fcf9580",
+        "type": "influxdb out",
+        "z": "1c16c59919477972",
+        "influxdb": "cf857280c50b1002",
+        "name": "",
+        "measurement": "CMI.Out.Misch.Hzkr2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1270,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "88eb05b511b4436e",
+        "type": "function",
+        "z": "1c16c59919477972",
+        "name": "",
+        "func": "\nreturn {payload: msg.payload.Data.Outputs[9].Value.Value};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 1420,
+        "wires": [
+            [
+                "3ddbc8aa1fcf9580"
+            ]
+        ]
     }
 ]
-
