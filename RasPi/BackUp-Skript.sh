@@ -15,3 +15,4 @@ rm -r /home/pi/BackUp-RasPi3/$(date --date='5 days ago'  +%Y%m%d)
 # am Ende der Tabelle folgende Zeile ergänzen
 # 0 3 * * * bash /home/pi/BackUp-RasPi3/Backup-Skript.sh
 # Bedeutung: Wenn die Minute = 0 und die Stunde = 3 ist, wird die Bash-Datei ausgeführt, sprich Nachts um 3:00h
+#
