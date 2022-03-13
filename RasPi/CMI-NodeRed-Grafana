@@ -95,3 +95,4 @@ echo "#############  siehe hier:  https://plantprogrammer.de/mqtt-auf-dem-raspbe
 
 echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
 sudo reboot 
+
