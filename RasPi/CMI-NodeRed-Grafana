@@ -90,8 +90,9 @@ sudo systemctl start mosquitto
 echo "#############  Konfiguration User-Accounts ###############"
 echo "#############  siehe hier:  https://plantprogrammer.de/mqtt-auf-dem-raspberry-pi-mosquitto/ ###############"
 
-
-
+echo "############# NginX installieren ###############"
+sudo apt install nginx
+sudo systemctl start nginx
 
 echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
 sudo reboot 
