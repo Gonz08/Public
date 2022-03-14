@@ -22,7 +22,7 @@ echo "############# Zusätzliche Software' ###############"
 #sudo apt install curl -y
 #sudo apt install wget -y
 #sudo apt install xscreensaver -y
-
+sudo apt install build-essential git curl
 
 
 echo "############# InfluxDB installieren ###############"
