@@ -9,7 +9,7 @@ sudo apt autoremove -y
 
 echo "############# Zusätzliche Software' ###############"
 sudo apt install fish -y
-chsh -s /usr/bin/fish 
+
 
 echo "############# Zusätzliche Software' ###############"
 
@@ -23,14 +23,7 @@ echo "############# Zusätzliche Software' ###############"
 #sudo apt install wget -y
 #sudo apt install xscreensaver -y
 
-echo "############# node red installieren ###############"
 
-#bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
-#sudo apt install build-essential git curl -y
-#sudo systemctl enable nodered.service
-#sudo systemctl restart nodered.service
-
-echo " jetzt auf  http://192.168.178.37:1880 aktiv"
 
 echo "############# InfluxDB installieren ###############"
 
@@ -65,20 +58,8 @@ echo " jetzt auf  http://192.168.178.37:3000 aktiv"
 echo "############# Syncthing installieren ###############"
 
 sudo apt-get install curl
-curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
-echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sour>
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add - echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sour>
 sudo apt update && sudo apt install syncthing -y
-syncthing
-
-echo "#############               ACHTUNG              ###############"
-echo "############# IP Adresse ändern in: 0.0.0.0:8384 ###############"
-echo "#############               ACHTUNG              ###############"
-nano /home/pi/.config/syncthing/config.xml
-
-sudo systemctl enable syncthing@pi.service
-sudo systemctl restart syncthing@pi.service
-
-echo " jetzt auf  http://192.168.178.37:8384 aktiv"
 
 
 echo "############# MQTT installieren ###############"
@@ -93,6 +74,34 @@ echo "#############  siehe hier:  https://plantprogrammer.de/mqtt-auf-dem-raspbe
 echo "############# NginX installieren ###############"
 sudo apt install nginx -y
 sudo systemctl start nginx
+
+
+echo "#############               ACHTUNG              ###############"
+echo "############# nach der Installation und dem Reboot müssen noch folgende Punkte durchgeführt werden"
+ 
+echo "############# Syncthing muss als Programm ausgeführt werden und anschließen konfiguriert werden ###############"
+echo "############# IP Adresse ändern in: 0.0.0.0:8384 ###############"
+echo "############# Folgendes Vorgehen ###############"
+echo "# syncthing"
+echo "# nano /home/pi/.config/syncthing/config.xml"
+echo "# sudo systemctl enable syncthing@pi.service"
+echo "# sudo systemctl restart syncthing@pi.service"
+echo "# echo " jetzt auf  http://192.168.178.37:8384 aktiv"
+
+echo "#############               fish als Shell aktivieren              ###############"
+echo "#  chsh -s /usr/bin/fish "
+
+echo "############# node red über eine weiter Bash-Datei ausführen ###############"
+
+echo "############# #bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)"
+echo "############# #sudo apt install build-essential git curl -y"
+echo "############# #sudo systemctl enable nodered.service"
+echo "############# #sudo systemctl restart nodered.service"
+
+echo " jetzt auf  http://192.168.178.37:1880 aktiv"
+
+echo "#############             WEITER MIT <ENTER>             ###############"
+read answer
 
 echo "############# Installation abgeschlossen, das System wird neu gestartet ###############"
 sudo reboot 
