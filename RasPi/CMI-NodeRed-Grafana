@@ -57,9 +57,15 @@ echo " jetzt auf  http://192.168.178.37:3000 aktiv"
 
 echo "############# Syncthing installieren ###############"
 
-sudo apt-get install curl
-curl -s https://syncthing.net/release-key.txt | sudo apt-key add - echo "deb http://apt.syncthing.net/ syncthing release" | sudo tee /etc/apt/sour>
-sudo apt update && sudo apt install syncthing -y
+sudo apt install curl -y
+sudo curl -s -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+sudo apt update -y
+sudo apt install syncthing -y
+
+
+
+
 
 
 echo "############# MQTT installieren ###############"
